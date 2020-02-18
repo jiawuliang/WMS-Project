@@ -3,12 +3,20 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
 
-var axios = require('axios')
-axios.defaults.baseURL = 'http://localhost:8443/api'
+import Antd from 'ant-design-vue'
+
+import 'ant-design-vue/dist/antd.css'
+
+axios.defaults.baseURL = '/api'
 
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false
+
+Vue.prototype.$http = axios;
+Vue.use(Antd)
+Vue.use(axios)
 
 /* eslint-disable no-new */
 new Vue({
